@@ -77,8 +77,8 @@ FORMULA=$formula FORMULA_URL=$url FORMULA_VERSION=$version FORMULA_SHA256=$sha25
     $version = $ENV{FORMULA_VERSION};
     $sha = $ENV{FORMULA_SHA256};
   }
-  s{^  url "[^"]+"\n  version "[^"]+"\n  sha256 "[0-9a-f]{64}"$}
-   {  url "$url"\n  version "$version"\n  sha256 "$sha"}m
+  s{^  url "[^"]+"\n(  version "[^"]+"\n)?  sha256 "[0-9a-f]{64}"$}
+   {"  url \"$url\"\n" . ($1 ? "  version \"$version\"\n" : "") . "  sha256 \"$sha\""}me
     or die "Could not update Formula/$ENV{FORMULA}.rb\n";
 ' "$formula_file"
 
