@@ -11,6 +11,7 @@ brew install rezen/tap/<formula>
 | Formula | Description |
 | --- | --- |
 | [`middles`](Formula/middles.rb) | [Policy-enforcing package registry proxy](https://github.com/rezen/middles) |
+| [`smash`](Formula/smash.rb) | [Policy-controlled shell for install scripts](https://github.com/rezen/smash) |
 
 ### middles
 
