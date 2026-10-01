@@ -25,6 +25,11 @@ jobs:
       HOMEBREW_NO_AUTO_UPDATE: 1
     steps:
       - uses: actions/checkout@v4
+      # The runner image ships whatever Homebrew it was built with, and
+      # HOMEBREW_NO_AUTO_UPDATE keeps the steps below from refreshing it. The
+      # formulae need a current Homebrew: middles uses the fetch phase and
+      # std_cargo_fetch_args, which arrived in Homebrew 7.0.5.
+      - run: brew update
       - run: brew style Formula/${{ matrix.formula }}.rb
       - run: brew tap rezen/tap "$GITHUB_WORKSPACE"
       - run: brew audit --strict --formula rezen/tap/${{ matrix.formula }}
