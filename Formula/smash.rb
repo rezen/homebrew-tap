@@ -1,8 +1,8 @@
 class Smash < Formula
   desc "Policy-controlled shell for install scripts"
   homepage "https://github.com/rezen/smash"
-  url "https://github.com/rezen/smash/archive/refs/tags/v0.0.2.tar.gz"
-  sha256 "7be6ef47ad7ff144835272581d574a0ba06a52cbc2e50dbab2f40a038bb25b89"
+  url "https://github.com/rezen/smash/archive/refs/tags/v0.0.3.tar.gz"
+  sha256 "276aa9b2ec690fc9429a1a5b6259ece0d2c25bce32b814b0b734be992c14adb9"
 
   depends_on "go" => :build
 
